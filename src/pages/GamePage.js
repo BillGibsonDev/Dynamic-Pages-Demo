@@ -19,7 +19,7 @@ export const GamePage = () => {
             url: 'https://free-to-play-games-database.p.rapidapi.com/api/game',
             params: { id: `${gameId}`},
             headers: {
-            'X-RapidAPI-Key': '46b37b20a9msh92aed9be2b060a5p1cf061jsn211cc00eb274',
+            'X-RapidAPI-Key': `${process.env.REACT_APP_RAPID_KEY}`,
             'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
             }
         };

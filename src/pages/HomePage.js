@@ -29,7 +29,7 @@ export const HomePage = () => {
   }, [])
   
   return (
-    <>
+    <div className="home">
         {
             games.map((game, index) => {
                 return (
@@ -40,6 +40,6 @@ export const HomePage = () => {
                 )
             })
         }
-    </>
+    </div>
   )
 }

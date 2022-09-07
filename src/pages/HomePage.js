@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 // components
-import {Game} from '../components/Game.js';
+import { Game } from '../components/Game.js';
 
 export const HomePage = () => {
 
@@ -10,20 +10,19 @@ export const HomePage = () => {
 
     useEffect(() => {
         const handleGameList = () => {
-        const options = {
-            method: 'GET',
-            url: 'https://free-to-play-games-database.p.rapidapi.com/api/games',
-            headers: {
-            'X-RapidAPI-Key': `${process.env.REACT_APP_RAPID_KEY}`,
-            'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
-            }
-        };
-        axios.request(options).then(function (response) {
-            console.log(response.data);
-            setGames(response.data);
-        }).catch(function (error) {
-            console.error(error);
-        })
+            const options = {
+                method: 'GET',
+                url: 'https://free-to-play-games-database.p.rapidapi.com/api/games',
+                headers: {
+                    'X-RapidAPI-Key': `${process.env.REACT_APP_RAPID_KEY}`,
+                    'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+                }
+            };
+            axios.request(options).then(function(response){
+                setGames(response.data);
+            }).catch(function (error) {
+                console.error(error);
+            })
         }
         handleGameList();
   }, [])

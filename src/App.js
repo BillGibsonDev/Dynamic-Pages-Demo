@@ -1,5 +1,3 @@
-import './App.css';
-
 // pages
 import { HomePage } from './pages/HomePage.js';
 import { GamePage } from './pages/GamePage.js';

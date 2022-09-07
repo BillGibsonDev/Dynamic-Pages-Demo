@@ -8,27 +8,24 @@ export const GamePage = () => {
 
     const { gameId } = useParams();
 
-    console.log(gameId)
-
     const [ game, setGame ] = useState({});
 
     useEffect(() => {
         const handleGame = () => {
-        const options = {
-            method: 'GET',
-            url: 'https://free-to-play-games-database.p.rapidapi.com/api/game',
-            params: { id: `${gameId}`},
-            headers: {
-            'X-RapidAPI-Key': `${process.env.REACT_APP_RAPID_KEY}`,
-            'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
-            }
-        };
-        axios.request(options).then(function (response) {
-            console.log(response.data);
-            setGame(response.data);
-        }).catch(function (error) {
-            console.error(error);
-        })
+            const options = {
+                method: 'GET',
+                url: 'https://free-to-play-games-database.p.rapidapi.com/api/game',
+                params: { id: `${gameId}`},
+                headers: {
+                    'X-RapidAPI-Key': `${process.env.REACT_APP_RAPID_KEY}`,
+                    'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+                }
+            };
+            axios.request(options).then(function(response){
+                setGame(response.data);
+            }).catch(function (error) {
+                console.error(error);
+            })
         }
     handleGame();
   }, [ gameId ])

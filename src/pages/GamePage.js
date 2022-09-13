@@ -1,13 +1,12 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState, useEffect } from "react"
+import axios from "axios"
 
 // router
 import { useParams } from "react-router-dom";
 
 export const GamePage = () => {
-    
-    const { gameId } = useParams();
 
+    const { gameId } = useParams();
 
     const [ game, setGame ] = useState([]);
 	
@@ -34,7 +33,7 @@ export const GamePage = () => {
   return (
     <div className="game-page">
         <img src={game.thumbnail} alt="" />
-        <h2>{game.title}</h2>
+        <h1>{game.title}</h1>
         <p>{game.description}</p>
     </div>
   )

@@ -26,7 +26,6 @@ export const HomePage = () => {
 		}
 		handleGameList();
 	}, [])
-	
 
   return (
     <div className="home">

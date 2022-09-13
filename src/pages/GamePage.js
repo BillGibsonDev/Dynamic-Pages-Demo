@@ -29,7 +29,7 @@ export const GamePage = () => {
 			})
 		}
 		handleGameList();
-	}, [])
+	}, [ gameId ])
 
   return (
     <div className="game-page">
